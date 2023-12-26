@@ -1,0 +1,130 @@
+@use "global" as *;
+
+.button {
+  display: inline-block;
+  position: relative;
+  background-color: $green;
+  border: 1px solid $green;
+  color: $white;
+  padding-top: rem(16);
+  padding-bottom: rem(16);
+  padding-left: rem(40);
+  padding-right: rem(80);
+  font-size: rem(14);
+  font-weight: $regular;
+  font-family: $second-font-family;
+  text-align: left;
+  width: 100%;
+  max-width: rem(202);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.button:hover {
+  @include mq("md") {
+    border: 1px solid $green;
+    color: $green;
+  }
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: rem(4);
+  bottom: rem(-4);
+  left: rem(4);
+  right: rem(-4);
+  border: 1px solid $green;
+  z-index: -1;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  transform: scale(0.5);
+  background-color: $white;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: 0.3s cubic-bezier(0.45, 0, 0.55, 1);
+  width: 100%;
+  z-index: -1;
+}
+
+.button:hover::after {
+  @include mq("md") {
+    transform: scale(1, 1);
+  }
+}
+
+.button span::after {
+  content: url(../images/common/button-white.png);
+  position: absolute;
+  transform: scale(0.5);
+  margin-left: rem(8);
+  width: 100%;
+  max-width: rem(20);
+}
+
+.button:hover span::after {
+  @include mq("md") {
+    content: url(../images/common/button-green.png);
+  }
+}
+
+.button--white {
+  display: inline-block;
+  position: relative;
+  background-color: $white;
+  border: 1px solid $white;
+  color: $green;
+  padding-top: rem(16);
+  padding-bottom: rem(16);
+  padding-left: rem(40);
+  padding-right: rem(80);
+  font-size: rem(14);
+  font-weight: $regular;
+  font-family: $second-font-family;
+  text-align: left;
+  width: 100%;
+  max-width: rem(202);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.button--white::before {
+  content: "";
+  position: absolute;
+  top: rem(4);
+  bottom: rem(-4);
+  left: rem(4);
+  right: rem(-4);
+  border: 1px solid $white;
+  z-index: -1;
+}
+
+.button--white::after {
+  content: "";
+  position: absolute;
+  transform: scale(0.5);
+  background-color: $green;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
+  width: 100%;
+  z-index: -1;
+}
+
+.button--white span::after {
+  content: url(../images/common/button-green.png);
+  position: absolute;
+  transform: scale(0.5);
+  margin-left: rem(8);
+  width: 100%;
+  max-width: rem(20);
+}

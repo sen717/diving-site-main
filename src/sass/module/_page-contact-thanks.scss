@@ -1,0 +1,45 @@
+@use "global" as *;
+
+.page-contact-thanks  {
+  position: relative;
+}
+
+.page-contact-thanks::before {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  top: rem(-27);
+  left: calc(50% - min(47vw, 40rem));
+  width: 100%;
+  max-width: rem(120);
+  height: rem(55);
+  background-image: url(../images/common/page-sp-fish.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: -1;
+  @include mq("md") {
+    top: rem(-70);
+    left: calc(50% - min(43vw, 40rem));
+    max-width: rem(301);
+    height: rem(138);
+    background-image: url(../images/common/page-pc-fish.png);
+  }
+}
+
+.page-contact-thanks__comment {
+  color: $black;
+}
+
+.page-contact-thanks__title {
+  line-height: calc(18/16);
+}
+
+.page-contact-thanks__title,
+.page-contact-thanks__text {
+  text-align: center;
+  font-size: rem(16);
+}
+
+.page-contact-thanks__text  {
+  margin-top: rem(40);
+}

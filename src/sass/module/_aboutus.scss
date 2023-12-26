@@ -1,0 +1,119 @@
+@use "global" as *;
+
+.aboutus__container {
+  margin-top: rem(51);
+  @include mq("md") {
+    position: relative;
+    margin-top: rem(120);
+  }
+}
+
+.aboutus__container::after {
+  content: "";
+  position: absolute;
+  right: calc(50% - min(48.7vw, 39.9rem));
+  bottom: rem(-92);
+  width: rem(194);
+  height: rem(181);
+  background-image: url(../images/common/aboutus-pc-sango.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: none;
+  @include mq("md") {
+    display: inline-block;
+  }
+}
+
+.aboutus__image-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.aboutus__image-left {
+  aspect-ratio: 128 / 194;
+  width: 100%;
+  height: 100%;
+  max-width: calc(128 / 345) * 100%;
+  margin-top: rem(-24);
+  @include mq("md") {
+    aspect-ratio: 404 / 606;
+    margin-top: rem(-81.6);
+  }
+}
+
+.aboutus__image-left img {
+  aspect-ratio: 128 / 194;
+  object-fit: cover;
+}
+
+.aboutus__image-right {
+  z-index: -1;
+  position: relative;
+  aspect-ratio: 281/186;
+  height: 100%;
+  width: 100%;
+  margin-left: -19%;
+  max-width: calc(281 / 345) * 100%;
+  @include mq("md") {
+    aspect-ratio: 880/581;
+    max-width: calc(880 / 1080) * 100%;
+  }
+}
+
+.aboutus__image-right img {
+  aspect-ratio: 281 / 186;
+  @include mq("md") {
+    aspect-ratio: 880 / 581;
+  }
+}
+
+.aboutus__text-container {
+  @include mq("md") {
+    display: flex;
+    gap: rem(40);
+    position: absolute;
+    top: 41%;
+    left: 57%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: rem(840);
+  }
+}
+
+.aboutus__decoration {
+  font-size: rem(40);
+  font-family: $second-font-family;
+  line-height: 1;
+  color: $green;
+  margin-top: rem(40);
+  max-width: rem(200);
+  @include mq("md") {
+    font-size: rem(80);
+    line-height: calc(100 / 80);
+    color: $white;
+    margin-top: 0;
+    max-width: rem(400);
+  }
+}
+
+.aboutus__text {
+  width: 100%;
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: calc(24/16);
+  color: $black;
+  margin-top: rem(19);
+  @include mq("md") {
+    color: $white;
+    margin-top: 0;
+    max-width: rem(400);
+  }
+}
+
+.aboutus__button {
+  text-align: center;
+  margin-top: rem(22.4);
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}

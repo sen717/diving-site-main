@@ -1,0 +1,116 @@
+@use "global" as *;
+
+.page-contact {
+  position: relative;
+}
+
+.page-contact::before {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  top: rem(-27);
+  left: calc(50% - min(47vw, 40rem));
+  width: 100%;
+  max-width: rem(120);
+  height: rem(55);
+  background-image: url(../images/common/page-sp-fish.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: -1;
+  @include mq("md") {
+    top: rem(-70);
+    left: calc(50% - min(50vw, 40rem));
+    max-width: rem(301);
+    height: rem(138);
+    background-image: url(../images/common/page-pc-fish.png);
+  }
+}
+
+.page-contact__inner {
+  @include mq("md") {
+    width: 100%;
+    max-width: rem(750);
+  }
+}
+
+
+.page-contact__text {
+  font-size: rem(14);
+  line-height: calc(22/14);
+  text-align: left;
+  margin-left: rem(8);
+  @include mq("md") {
+    text-align: center;
+    margin-left: rem(16);
+  }
+}
+
+.page-contact__button {
+  margin-top: rem(24);
+  text-align: center;
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
+
+.page-contact__checkbox {
+  display: flex;
+  justify-content: center;
+  padding-left: rem(30);
+  padding-right: rem(30);
+  margin-top: rem(40);
+  @include mq("md") {
+    align-items: center;
+    margin-top: rem(80);
+    padding: 0;
+  }
+}
+
+.page-contact__checkbox label {
+  display: block;
+  @include mq("md") {
+    display: inline-block;
+  }
+}
+
+.page-contact__checkbox input {
+	display: none;
+  cursor: pointer;
+  display: inline-block;
+  padding-left: rem(25);
+  position: relative;
+}
+
+
+.page-contact__checkbox input::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  border: 1px solid $green;
+  display: block;
+  width: rem(22);
+  height: rem(22);
+}
+
+
+.page-contact__checkbox input::after {
+  content: "";
+  margin-top: rem(-2);
+  position: absolute;
+  top: 50%;
+  left: 14%;
+  transform: translateY(-50%) rotate(-45deg);
+  display: block;
+  width: rem(15);
+  height: rem(8);
+  border-bottom: rem(3) solid $red;
+  border-left: rem(3) solid $red;
+  transition:  .3s;
+  opacity: 0;
+}
+
+.page-contact__checkbox input:checked::after {
+  opacity: 1;
+}

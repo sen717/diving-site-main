@@ -1,0 +1,181 @@
+@use "global" as *;
+
+.page-price {
+  position: relative;
+}
+
+.page-price::before {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  top: rem(-32);
+  left: calc(50% - min(48.7vw, 40rem));
+  width: 100%;
+  max-width: rem(120);
+  height: rem(55);
+  background-image: url(../images/common/page-sp-fish.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: -1;
+  @include mq("md") {
+    top: rem(-77);
+    left: calc(50% - min(48.7vw, 40rem));
+    max-width: rem(301);
+    height: rem(138);
+    background-image: url(../images/common/page-pc-fish.png);
+  }
+}
+
+// .page-price__inner {
+//   @include mq("md") {
+//     width: 100%;
+//     max-width: rem(750);
+//   }
+// }
+
+// .page-price__lists {
+//   width: 100%;
+//   height: 100%;
+//   margin-inline: auto;
+// }
+
+// .page-price__list {
+//   width: 100%;
+//   height: 100%;
+//   border-collapse: collapse;
+//   @include mq("md") {
+//     display: flex;
+//     justify-content: center;
+//   }
+// }
+
+// .page-price__list thead {
+//   @include mq("md") {
+//     display: flex;
+//     align-items: center;
+//     background-color: $green;
+//   }
+// }
+
+// .page-price__list thead:hover {
+//   @include mq("md") {
+//     opacity: 0.7;
+//   }
+// }
+
+// .page-price__list:not(:first-child) {
+//   margin-top: rem(40);
+//   @include mq("md") {
+//     margin-top: rem(80);
+//   }
+// }
+
+// .page-price-list__head {
+//   color: $white;
+//   background-color: $green;
+//   font-size: rem(16);
+//   font-weight: $bold;
+//   line-height: calc(24 / 16);
+//   margin-left: rem(8);
+//   height: rem(40);
+//   @include mq("md") {
+//     display: flex;
+//     align-items: center;
+//   }
+// }
+
+// .page-price-list__icon {
+//   display: block;
+//   width: 100%;
+//   // アイコンのスペースを確保したpadding-leftを設定する
+//   padding-left: rem(25);
+//   position: relative;
+//   @include mq("md") {
+//     padding-left: 0;
+//     padding-bottom: 40%;
+//   }
+// }
+
+// .page-price-list__icon::before {
+//   content: "";
+//   display: block;
+//   width: rem(22);
+//   height: rem(22);
+//   position: absolute;
+//   left: 25%;
+//   // top: 50%;と、transform: translateY(-50%) で上下中央に配置
+//   top: 50%;
+//   transform: translateY(-50%);
+//   background-size: contain;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-image: url(../images/common/page-price-icon-sp.svg);
+//   @include mq("md") {
+//     background-image: url(../images/common/page-price-icon-pc.svg);
+//     width: rem(62);
+//     height: rem(62);
+//     top: 60%;
+//     left: 30%;
+//   }
+// }
+
+// .page-price-list__title {
+//   text-align: center;
+//   padding: rem(3);
+//   width: 70%;
+//   @include mq("md") {
+//     text-align: left;
+//     width: rem(340);
+//     padding-left: rem(16);
+//   }
+// }
+
+
+// .page-price-list__price {
+//   border: 1px solid $green;
+//   padding-right: rem(15);
+//   width: 30%;
+//   text-align: right;
+//   @include mq("md") {
+//     min-width: rem(162);
+//   }
+
+// }
+
+// .page-price-list__title,
+// .page-price-list__price {
+//   border: 1px solid $green;
+//   height: rem(60);
+//   @include mq("md") {
+//     height: rem(57);
+//   }
+// }
+
+// table thead tr {
+//   @include mq("md") {
+//     width: rem(200);
+//   }
+// }
+
+.page-price__inner.inner {
+  display: grid;
+  gap: rem(40) 0;
+  width: 100%;
+  max-width: rem(750);
+  @include mq("md") {
+    gap: rem(80) 0;
+  }
+}
+
+.page-price__item {
+  width: 100%;
+  margin-inline: auto;
+  grid-gap: 0;
+  display: grid;
+  grid-template-columns:repeat(2, auto);
+  grid-template-rows:repeat(3, auto);
+  @include mq("md") {
+    grid-template-columns: calc((200 / 700) * 100%) calc((340 / 700) * 100%) calc((162 / 700) * 100%);
+    grid-template-rows: repeat(3, auto);
+  }
+}

@@ -1,0 +1,38 @@
+@use "global" as *;
+
+.sub-mv {
+  width: 100%;
+}
+
+.sub-mv__inner {
+  width: 100%;
+  position: relative;
+}
+
+.sub-mv__image {
+  aspect-ratio: 375 / 460;
+  object-fit: cover;
+  @include mq("md") {
+    aspect-ratio: 1440 / 548;
+  }
+}
+
+.sub-mv__title {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: $third-font-family;
+  font-weight: $regular;
+  margin-inline: auto;
+  text-align: center;
+  color: $white;
+  font-size: rem(40);
+  z-index: 10;
+  @include mq("md") {
+  font-size: rem(80);
+  line-height: calc(100/80);
+  margin-top: 3rem;
+  }
+}

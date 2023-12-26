@@ -1,0 +1,35 @@
+@use "global" as *;
+
+
+.page-faq__inner.inner {
+  max-width: rem(750);
+
+}
+.page-faq {
+  position: relative;
+}
+
+.page-faq::before {
+  background-image: url(../images/common/sp-tab-img.png);
+  content: "";
+  position: absolute;
+  left: calc(50% - min(48.7vw, 39.9rem));
+  top: rem(-40);
+  width: rem(120);
+  height: rem(55);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  // z-index: -10000;
+  @include mq(md) {
+    top: rem(-80);
+    width: rem(301);
+    height: rem(138);
+  }
+}
+
+
+.page-faq__item + .page-faq__item {
+  margin-top: rem(40);
+}
+

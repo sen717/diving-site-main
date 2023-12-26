@@ -1,0 +1,130 @@
+@use "global" as *;
+
+.gallery {
+  position: relative;
+}
+
+.gallery::after {
+  @include mq("md") {
+    display: inline-block;
+    content: "";
+    position: absolute;
+    top: rem(-80);
+    right: calc(50% - min(48.7vw, 42rem));
+    width: 100%;
+    max-width: rem(301);
+    height: rem(138);
+    background-image: url(../images/common/gallery-right.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.gallery__list {
+  display: grid;
+  gap: rem(8);
+  margin-top: rem(40);
+  @include mq(md) {
+    margin-top: rem(80);
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(11, 1fr);
+  }
+}
+
+
+.gallery-list__item {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.gallery-list__item img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.gallery__list img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-list__item:nth-of-type(6n+1) {
+  aspect-ratio: 345 / 524;
+  @include mq(md) {
+    aspect-ratio: 492 / 746;
+    grid-column: span 5;
+    grid-row: span 2;
+  }
+}
+
+.gallery-list__item:nth-of-type(6n+2) {
+  aspect-ratio: 345/219;
+  @include mq(md) {
+    aspect-ratio: 580 / 369;
+    grid-column: span 6;
+    grid-row: span 1;
+  }
+}
+
+.gallery-list__item:nth-of-type(6n+3) {
+  aspect-ratio: 345/219;
+  @include mq(md) {
+    aspect-ratio: 580 / 369;
+    grid-column: span 6;
+    grid-row: span 1;
+  }
+}
+
+.gallery-list__item:nth-of-type(6n+4) {
+  aspect-ratio: 345/219;
+  @include mq(md) {
+    aspect-ratio: 580 / 369;
+    grid-column: span 6;
+    grid-row: span 1;
+  }
+}
+
+.gallery-list__item:nth-of-type(6n+5) {
+  aspect-ratio: 345/219;
+  @include mq(md) {
+    aspect-ratio: 580 / 369;
+    grid-column: span 6;
+    grid-row: span 1;
+  }
+}
+.gallery-list__item:nth-of-type(6n+6) {
+    aspect-ratio: 345 / 524;
+  @include mq(md) {
+    aspect-ratio: 746 / 492;
+    grid-column: span 5;
+    grid-row: span 2;
+  }
+}
+
+
+#grayDisplay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100% !important;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10000;
+}
+
+#grayDisplay img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 80%;
+  max-height: 90%;
+  height: 90%;
+  object-fit: contain;
+}

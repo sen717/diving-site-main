@@ -1,0 +1,64 @@
+@use "global" as *;
+
+.page-404__inner {
+  font-family: $third-font-family;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: rem(40);
+  position: relative;
+  @include mq("md") {
+    padding-top: rem(80);
+  }
+}
+
+.page-404__inner::after  {
+  position: absolute;
+  content: '';
+  top: rem(0);
+  left: rem(15);
+  display: inline-block;
+  width: 100%;/*幅*/
+  max-width: rem(345);
+  height:rem(345);/*どれだけデカくなってもはみ出ないであろう高さを指定*/
+  background-image: url(../images/common/shark-sp.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  @include mq("md") {
+    background-image: url(../images/common/shark-pc.png);
+    max-width: rem(698);
+    height: rem(698);
+  }
+}
+
+.page-404__title {
+  font-size: rem(80);
+  letter-spacing: 0.5em;
+  text-indent: 0.5em;
+  @include mq("md") {
+    font-size: rem(160);
+  }
+}
+
+.page-404__text {
+  font-size: rem(16);
+  line-height: calc(24 /16);
+  text-align: center;
+  @include mq("md") {
+    margin-top: rem(20);
+  }
+}
+
+.page-404__button {
+  text-align: center;
+  margin-top: rem(40);
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}
+
+.backgroundcolor{
+  background-color: $green;
+}

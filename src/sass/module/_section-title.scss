@@ -1,0 +1,78 @@
+@use "global" as *;
+
+.section-title {
+  text-align: center;
+  color: $black;
+}
+
+.section-title__sub {
+  display: block;
+  font-size: rem(32);
+  line-height: calc(40 / 32);
+  font-weight: $regular;
+  font-family: $second-font-family;
+  text-transform: capitalize;
+  color: $black;
+  @include mq("md") {
+    font-size: rem(40);
+    line-height: calc(40 / 40);
+  }
+}
+
+.section-title__sub::first-letter {
+  color: $green;
+}
+
+.section-title__main {
+  font-size: rem(12);
+  line-height: calc(18 / 12);
+  margin-top: rem(4);
+  font-family:$base-font-family;
+  font-weight: $regular;
+  color: $green;
+  @include mq("md") {
+    margin-top: rem(8);
+  }
+}
+
+.section-title.section-title--contact {
+  font-size: rem(80);
+  line-height: calc(1 / 1);
+  text-shadow: 0 rem(4) rem(4) rgba($black, 0.2);
+  margin-top: 0;
+  @include mq("md") {
+    text-shadow: none;
+  }
+}
+
+.section-title.section-title--contact span {
+  font-size: rem(80);
+  margin-top: rem(-5);
+}
+
+// .section-title.section-title--contact h2 {
+//   margin-top: rem(-5);
+// }
+
+.section-title.section-title--white,
+.section-title.section-title--white span {
+  @include mq("md") {
+    color: $white;
+  }
+}
+
+.section-title.section-title--white span::first-letter {
+  @include mq("md") {
+    color: $white;
+  }
+}
+
+.section-title__main.section-title__main--white {
+  @include mq("md") {
+    color: $white;
+  }
+}
+
+.section-title.section-title--aboutus span {
+  text-transform: none;
+}

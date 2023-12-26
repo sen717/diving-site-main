@@ -1,0 +1,63 @@
+@use "global" as *;
+
+
+// ページナビ
+.pagination {
+	display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 rem(12);
+  list-style-type: none;
+  padding: 0;
+	margin-top: rem(80);
+}
+
+.pagination a,
+.pagination span {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: rem(16);
+	font-weight: $bold;
+	font-family: $third-font-family;
+	width: rem(38);
+	height: rem(38);
+	border: 1px solid $green;
+	color: $green;
+	transition: 0.2s ease-in-out;
+	cursor: pointer;
+}
+
+
+.pagination a:not(:hover) {
+	text-decoration: none;
+}
+
+.pagination span.current {
+	background-color: $green;
+	color: $white;
+	pointer-events: none;
+	margin-left: rem(28);
+}
+
+.pagination a.next {
+	margin-left: rem(28);
+}
+
+.pagination-detail a.next {
+	margin-left: rem(70);
+}
+
+.pagination a:hover,
+.pagination .prev a:hover,
+.pagination .next a:hover {
+	background-color: $green;
+	color: $white;
+}
+
+.pagination.u-desktop {
+	display: none;
+  @include mq("md") {
+		display: block
+  }
+}

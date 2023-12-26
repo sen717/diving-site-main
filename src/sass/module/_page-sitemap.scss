@@ -1,0 +1,23 @@
+@use "global" as *;
+
+.page-sitemap  {
+  position: relative;
+}
+
+.page-sitemap::before {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  top: rem(-6);
+  left: calc(50% - min(47vw, 40rem));
+  width: 100%;
+  max-width: rem(120);
+  height: rem(55);
+  background-image: url(../images/common/page-sp-fish.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: -1;
+  @include mq("md") {
+    display: none;
+  }
+}

@@ -1,0 +1,27 @@
+@use "global" as *;
+
+.footer {
+  background-color: $green;
+  font-family: 'Noto Sans Jp';
+}
+
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__copyright {
+  display: block;
+  margin-top: rem(28.8);
+  font-size: rem(12);
+  line-height: calc(18/12);
+  font-weight: $regular;
+  font-family: "Gotu",sans-serif;
+  color: $white;
+  text-align: center;
+  @include mq("md") {
+    margin-top: rem(76.8);
+    font-size: rem(14);
+    line-height: calc(18 / 14);
+  }
+}

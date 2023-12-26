@@ -1,0 +1,53 @@
+@use "global" as *;
+
+// campaignとvoiceの上部のタブ
+.tab-items {
+	display: flex;
+	margin-inline: auto;
+	justify-content:center;
+	gap: rem(16) rem(21);
+	flex-wrap: wrap;
+	@include mq("md") {
+		justify-content:flex-start;
+		gap: rem(16) rem(32);
+  }
+}
+
+.tab-items__item {
+	display: block;
+	font-size: rem(14);
+	font-family: $base-font-family;
+	line-height: calc(22 /14);
+	color: $green;
+	border: 1px solid $green;
+	background-color: $white;
+	max-width: rem(300);
+	min-width: rem(100);
+	width: fit-content;
+	flex-basis: rem(158);
+	padding-top: rem(6);
+	padding-bottom: rem(6);
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  transition: 0.2s ease-in-out;
+	cursor: pointer;
+}
+
+.tab-items__item:not(.active) {
+  color: $green; /* アクティブでない場合の文字色 */
+  background-color: $white; /* アクティブでない場合の背景色 */
+  border: 1px solid $green; /* アクティブでない場合のボーダー色 */
+}
+
+.tab-items__item.active {
+	color: $white;
+	background-color: $green;
+}
+
+.tab-items__item:hover {
+	background-color: $green;
+	color: $white;
+}
+

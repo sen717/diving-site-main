@@ -1,0 +1,29 @@
+@use "global" as *;
+
+.blog-card-mini__img {
+  width: 50%;
+}
+
+.blog-card-mini__img img {
+  width: 100%;
+  aspect-ratio: 121 / 90;
+  object-fit: cover;
+}
+
+.blog-card-mini__body {
+  width: 50%;
+  margin-left: rem(16);
+}
+
+.blog-card-mini__date {
+  font-size: rem(12);
+  font-family: $second-font-family;
+  line-height: calc(18 / 12);
+}
+
+.blog-card-mini__title {
+  font-size: rem(16);
+  font-weight: $medium;
+  margin-top: rem(4);
+}
+
