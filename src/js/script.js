@@ -157,10 +157,10 @@ jQuery(function ($) {
     newsLinks.click(function () {
       // クリックされたタブに.activeクラスを追加し、他のタブからは削除する
       newsLinks.removeClass("active");
-      // $(this).addClass("active");
+      $(this).addClass("active");
       // // クリックされたタブのdata-filter属性を取得
       // var btnFilter = $(this).attr('data-filter');
-      タブに対応するコンテンツを表示するか非表示にする
+      // タブに対応するコンテンツを表示するか非表示にする
       if (btnFilter === 'campaign-tab01') {
         $(".page-campaign-cards__card").fadeIn();
       } else {
